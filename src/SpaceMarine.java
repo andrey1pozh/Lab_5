@@ -1,7 +1,7 @@
 import java.time.LocalDateTime;
 
 public class SpaceMarine implements Comparable<SpaceMarine> {
-    private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+    private Long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
     private LocalDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
@@ -18,6 +18,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         this.coordinates = coordinates;
         this.creationDate = creationDate;
         this.health = health;
+        this.achievements = achievements;
         this.weaponType = weaponType;
         this.meleeWeapon = meleeWeapon;
         this.chapter = chapter;
@@ -37,6 +38,9 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
     }
     public int getHealth() {
         return health;
+    }
+    public String getAchievements() {
+        return achievements;
     }
     public Weapon getWeaponType() {
         return weaponType;

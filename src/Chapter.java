@@ -3,11 +3,11 @@
  */
 public class Chapter {
     private String name;
-    private long marinesCount;
+    private long parentLegion;
 
     public Chapter(String name, long marinesCount) {
         this.name = name;
-        this.marinesCount = marinesCount;
+        this.parentLegion = marinesCount;
     }
 
     /**
@@ -21,17 +21,17 @@ public class Chapter {
      * @return Number of marines in the chapter.
      */
     public long getMarinesCount() {
-        return marinesCount;
+        return parentLegion;
     }
 
     @Override
     public String toString() {
-        return name + " (" + marinesCount + " солдат)";
+        return name + " (" + parentLegion + " солдат)";
     }
 
     @Override
     public int hashCode() {
-        return name.hashCode() + (int) marinesCount;
+        return name.hashCode() + (int) parentLegion;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class Chapter {
         if (this == obj) return true;
         if (obj instanceof Chapter) {
             Chapter chapterObj = (Chapter) obj;
-            return name.equals(chapterObj.getName()) && (marinesCount == chapterObj.getMarinesCount());
+            return name.equals(chapterObj.getName()) && (parentLegion == chapterObj.getMarinesCount());
         }
         return false;
     }
