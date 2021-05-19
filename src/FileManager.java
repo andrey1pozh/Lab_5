@@ -27,11 +27,13 @@ public class FileManager {
      * Writes collection to a file.
      * @param collection Collection to write.
      */
+
     public void writeCollection(Collection<?> collection) {
+        envVariable = "C:\\Users\\andre\\IdeaProjects\\Lab_5\\src\\marinesCollection2.json";
         if (envVariable != null) {
             try (FileWriter collectionFileWriter = new FileWriter(new File(envVariable))) {
                 collectionFileWriter.write(gson.toJson(collection));
-                Console.println("Коллекция успешна сохранена в файл!");
+                Console.println("Коллекция успешно сохранена в файл!");
             } catch (IOException exception) {
                 Console.printerror("Загрузочный файл является директорией/не может быть открыт!");
             }
