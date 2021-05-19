@@ -7,7 +7,7 @@ public class App {
 
     public static void main(String[] args) {
         try (Scanner userScanner = new Scanner(System.in)) {
-            final String envVariable = "LABA";
+            final String envVariable = "C:\\Users\\andre\\IdeaProjects\\Lab_5\\src\\marinesCollection.json";
 
             MarineAsker marineAsker = new MarineAsker(userScanner);
             FileManager fileManager = new FileManager(envVariable);

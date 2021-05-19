@@ -28,8 +28,8 @@ public class FileManager {
      * @param collection Collection to write.
      */
     public void writeCollection(Collection<?> collection) {
-        if (System.getenv().get(envVariable) != null) {
-            try (FileWriter collectionFileWriter = new FileWriter(new File(System.getenv().get(envVariable)))) {
+        if (envVariable != null) {
+            try (FileWriter collectionFileWriter = new FileWriter(new File(envVariable))) {
                 collectionFileWriter.write(gson.toJson(collection));
                 Console.println("Коллекция успешна сохранена в файл!");
             } catch (IOException exception) {
@@ -43,8 +43,8 @@ public class FileManager {
      * @return Readed collection.
      */
     public TreeSet<SpaceMarine> readCollection() {
-        if (System.getenv().get(envVariable) != null) {
-            try (Scanner collectionFileScanner = new Scanner(new File(System.getenv().get(envVariable)))) {
+        if (envVariable != null) {
+            try (Scanner collectionFileScanner = new Scanner(new File(envVariable))) {
                 TreeSet<SpaceMarine> collection;
                 Type collectionType = new TypeToken<TreeSet<SpaceMarine>>() {}.getType();
                 collection = gson.fromJson(collectionFileScanner.nextLine().trim(), collectionType);
