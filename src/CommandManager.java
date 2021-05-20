@@ -30,7 +30,8 @@ public class CommandManager {
 
     public CommandManager(Command helpCommand, Command infoCommand, Command showCommand, Command addCommand, Command updateCommand,
                           Command removeByIdCommand, Command clearCommand, Command saveCommand, Command exitCommand, Command executeScriptCommand,
-                          Command addIfMinCommand, Command removeGreaterCommand, Command historyCommand) {
+                          Command addIfMinCommand, Command removeGreaterCommand, Command historyCommand, Command sumOfHealthCommand,
+                          Command maxByMeleeWeaponCommand, Command filterByWeaponTypeCommand) {
         this.helpCommand = helpCommand;
         this.infoCommand = infoCommand;
         this.showCommand = showCommand;
@@ -44,6 +45,9 @@ public class CommandManager {
         this.addIfMinCommand = addIfMinCommand;
         this.removeGreaterCommand = removeGreaterCommand;
         this.historyCommand = historyCommand;
+        this.sumOfHealthCommand = sumOfHealthCommand;
+        this.maxByMeleeWeaponCommand = maxByMeleeWeaponCommand;
+        this.filterByWeaponTypeCommand = filterByWeaponTypeCommand;
 
         // commands.add(helpCommand);
         commands.add(infoCommand);
@@ -58,6 +62,9 @@ public class CommandManager {
         commands.add(addIfMinCommand);
         commands.add(removeGreaterCommand);
         commands.add(historyCommand);
+        commands.add(sumOfHealthCommand);
+        commands.add(maxByMeleeWeaponCommand);
+        commands.add(filterByWeaponTypeCommand);
     }
 
     /**

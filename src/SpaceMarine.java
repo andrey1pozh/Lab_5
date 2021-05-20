@@ -27,34 +27,44 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
     public Long getId() {
         return id;
     }
+
     public String getName() {
         return name;
     }
+
     public Coordinates getCoordinates() {
         return coordinates;
     }
+
     public LocalDateTime getCreationDate() {
         return creationDate;
     }
+
     public int getHealth() {
         return health;
     }
+
     public String getAchievements() {
         return achievements;
     }
+
     public Weapon getWeaponType() {
         return weaponType;
     }
+
     public MeleeWeapon getMeleeWeapon() {
         return meleeWeapon;
     }
+
     public Chapter getChapter() {
         return chapter;
     }
+
     @Override
     public int compareTo(SpaceMarine marineObj) {
         return id.compareTo(marineObj.getId());
     }
+
     @Override
     public String toString() {
         String info = "";
@@ -81,28 +91,10 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         if (obj instanceof SpaceMarine) {
             SpaceMarine marineObj = (SpaceMarine) obj;
             return name.equals(marineObj.getName()) && coordinates.equals(marineObj.getCoordinates()) &&
-                    (health == marineObj.getHealth())  && (weaponType == marineObj.getWeaponType()) && (meleeWeapon == marineObj.getMeleeWeapon()) &&
+                    (health == marineObj.getHealth()) && (weaponType == marineObj.getWeaponType()) && (meleeWeapon == marineObj.getMeleeWeapon()) &&
                     chapter.equals(marineObj.getChapter());
         }
         return false;
     }
+}
 
-/*public class Coordinates {
-    private Long x; //Поле не может быть null
-    private Integer y; //Максимальное значение поля: 733, Поле не может быть null
-}
-public class Chapter {
-    private String name; //Поле не может быть null, Строка не может быть пустой
-    private String parentLegion;
-}
-public enum Weapon {
-    COMBI_FLAMER,
-    COMBI_PLASMA_GUN,
-    GRAV_GUN;
-}
-public enum MeleeWeapon {
-    CHAIN_AXE,
-    MANREAPER,
-    LIGHTING_CLAW;
-}*/
-}

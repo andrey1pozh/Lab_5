@@ -29,7 +29,6 @@ public class FileManager {
      */
 
     public void writeCollection(Collection<?> collection) {
-        envVariable = "C:\\Users\\andre\\IdeaProjects\\Lab_5\\src\\marinesCollection2.json";
         if (envVariable != null) {
             try (FileWriter collectionFileWriter = new FileWriter(new File(envVariable))) {
                 collectionFileWriter.write(gson.toJson(collection));

@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 /**
  * Operates command input.
+ *
  */
 public class Console {
     private CommandManager commandManager;

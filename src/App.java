@@ -8,7 +8,6 @@ public class App {
     public static void main(String[] args) {
         try (Scanner userScanner = new Scanner(System.in)) {
             final String envVariable = "C:\\Users\\andre\\IdeaProjects\\Lab_5\\src\\marinesCollection.json";
-
             MarineAsker marineAsker = new MarineAsker(userScanner);
             FileManager fileManager = new FileManager(envVariable);
             CollectionManager collectionManager = new CollectionManager(fileManager);
@@ -25,7 +24,10 @@ public class App {
                 new ExecuteScriptCommand(),
                 new AddIfMinCommand(collectionManager, marineAsker),
                 new RemoveGreaterCommand(collectionManager, marineAsker),
-                new HistoryCommand()
+                new HistoryCommand(),
+                new SumOfHealthCommand(collectionManager),
+                new MaxByMeleeWeaponCommand(collectionManager),
+                new FilterByWeaponTypeCommand(collectionManager)
             );
             Console console = new Console(commandManager, userScanner, marineAsker);
 
