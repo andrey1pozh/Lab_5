@@ -1,4 +1,5 @@
 public class Coordinates {
+
     private double x;
     private Float y;
 
