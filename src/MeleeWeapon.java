@@ -2,11 +2,9 @@
  * Enumeration with marine melee weapon constants.
  */
 public enum MeleeWeapon {
-    CHAIN_AXE,
-    CHAIN_SWORD,
-    LIGHTING_CLAW,
-    POWER_BLADE,
-    POWER_FIST;
+    HEAVY_BOLTGUN,
+    BOLT_PISTOL,
+    GRAV_GUN;
 
     /**
      * Generates a beautiful list of enum string values.
