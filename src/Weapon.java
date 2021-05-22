@@ -2,8 +2,8 @@
  * Enumeration with marine weapon constants.
  */
 public enum Weapon {
-    COMBI_FLAMER,
-    COMBI_PLASMA_GUN,
+    HEAVY_BOLTGUN,
+    BOLT_PISTOL,
     GRAV_GUN;
 
     /**

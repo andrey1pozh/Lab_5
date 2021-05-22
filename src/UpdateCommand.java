@@ -32,8 +32,8 @@ public class UpdateCommand extends AbstractCommand {
             String name = oldMarine.getName();
             Coordinates coordinates = oldMarine.getCoordinates();
             LocalDateTime creationDate = oldMarine.getCreationDate();
-            int health = oldMarine.getHealth();
-            String achievements = oldMarine.getAchievements();
+            double health = oldMarine.getHealth();
+            AstartesCategory category = oldMarine.getCategory();
             Weapon weaponType = oldMarine.getWeaponType();
             MeleeWeapon meleeWeapon = oldMarine.getMeleeWeapon();
             Chapter chapter = oldMarine.getChapter();
@@ -43,20 +43,21 @@ public class UpdateCommand extends AbstractCommand {
             if (marineAsker.askQuestion("Хотите изменить имя солдата?")) name = marineAsker.askName();
             if (marineAsker.askQuestion("Хотите изменить координаты солдата?")) coordinates = marineAsker.askCoordinates();
             if (marineAsker.askQuestion("Хотите изменить здоровье солдата?")) health = marineAsker.askHealth();
-            // (marineAsker.askQuestion("Хотите изменить категорию солдата?")) category = marineAsker.askCategory();
+            if (marineAsker.askQuestion("Хотите изменить категорию солдата?")) category = marineAsker.askCategory();
             if (marineAsker.askQuestion("Хотите изменить оружие дальнего боя солдата?")) weaponType = marineAsker.askWeaponType();
             if (marineAsker.askQuestion("Хотите изменить оружие ближнего боя солдата?")) meleeWeapon = marineAsker.askMeleeWeapon();
             if (marineAsker.askQuestion("Хотите изменить орден солдата?")) chapter = marineAsker.askChapter();
 
             collectionManager.addToCollection(new SpaceMarine(
-                id,
-                name,
-                coordinates,
-                creationDate,
-                health,
-                weaponType,
-                meleeWeapon,
-                chapter
+                    id,
+                    name,
+                    coordinates,
+                    creationDate,
+                    health,
+                    category,
+                    weaponType,
+                    meleeWeapon,
+                    chapter
             ));
             Console.println("Солдат успешно изменен!");
             return true;

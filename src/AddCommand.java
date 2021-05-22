@@ -28,7 +28,7 @@ public class AddCommand extends AbstractCommand {
                 marineAsker.askCoordinates(),
                 LocalDateTime.now(),
                 marineAsker.askHealth(),
-                //marineAsker.askCategory(),
+                marineAsker.askCategory(),
                 marineAsker.askWeaponType(),
                 marineAsker.askMeleeWeapon(),
                 marineAsker.askChapter()

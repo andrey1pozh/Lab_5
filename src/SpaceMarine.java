@@ -1,61 +1,91 @@
 import java.time.LocalDateTime;
 
+/**
+ * Main character. Is stored in the collection.
+ */
 public class SpaceMarine implements Comparable<SpaceMarine> {
-    private Long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
-    private String name; //Поле не может быть null, Строка не может быть пустой
-    private Coordinates coordinates; //Поле не может быть null
-    private LocalDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
-    private int health; //Значение поля должно быть больше 0
-    private String achievements; //Поле может быть null
-    private Weapon weaponType; //Поле не может быть null
-    private MeleeWeapon meleeWeapon; //Поле не может быть null
-    private Chapter chapter; //Поле не может быть null
+    private Long id;
+    private String name;
+    private Coordinates coordinates;
+    private LocalDateTime creationDate;
+    private double health;
+    private AstartesCategory category;
+    private Weapon weaponType;
+    private MeleeWeapon meleeWeapon;
+    private Chapter chapter;
 
-    public SpaceMarine(Long id, String name, Coordinates coordinates, LocalDateTime creationDate, int health,
-                       Weapon weaponType, MeleeWeapon meleeWeapon, Chapter chapter) {
+    public SpaceMarine(Long id, String name, Coordinates coordinates, LocalDateTime creationDate, double health,
+                       AstartesCategory category, Weapon weaponType, MeleeWeapon meleeWeapon, Chapter chapter) {
         this.id = id;
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = creationDate;
         this.health = health;
-        this.achievements = achievements;
+        this.category = category;
         this.weaponType = weaponType;
         this.meleeWeapon = meleeWeapon;
         this.chapter = chapter;
     }
 
+    /**
+     * @return ID of the marine.
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * @return Name of the marine.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @return Coordinates of the marine.
+     */
     public Coordinates getCoordinates() {
         return coordinates;
     }
 
+    /**
+     * @return Creation date of the marine.
+     */
     public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-    public int getHealth() {
+    /**
+     * @return Health of the marine.
+     */
+    public double getHealth() {
         return health;
     }
 
-    public String getAchievements() {
-        return achievements;
+    /**
+     * @return Category of the marine.
+     */
+    public AstartesCategory getCategory() {
+        return category;
     }
 
+    /**
+     * @return Weapon type of the marine.
+     */
     public Weapon getWeaponType() {
         return weaponType;
     }
 
+    /**
+     * @return Melee weapon of the marine.
+     */
     public MeleeWeapon getMeleeWeapon() {
         return meleeWeapon;
     }
 
+    /**
+     * @return Chapter of the marine.
+     */
     public Chapter getChapter() {
         return chapter;
     }
@@ -73,6 +103,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         info += "\n Имя: " + name;
         info += "\n Местоположение: " + coordinates;
         info += "\n Здоровье: " + health;
+        info += "\n Категория: " + category;
         info += "\n Дальнее оружие: " + weaponType;
         info += "\n Ближнее оружие: " + meleeWeapon;
         info += "\n Орден: " + chapter;
@@ -81,7 +112,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
 
     @Override
     public int hashCode() {
-        return name.hashCode() + coordinates.hashCode() + (int) health + weaponType.hashCode() +
+        return name.hashCode() + coordinates.hashCode() + (int) health + category.hashCode() + weaponType.hashCode() +
                 meleeWeapon.hashCode() + chapter.hashCode();
     }
 
@@ -91,10 +122,10 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         if (obj instanceof SpaceMarine) {
             SpaceMarine marineObj = (SpaceMarine) obj;
             return name.equals(marineObj.getName()) && coordinates.equals(marineObj.getCoordinates()) &&
-                    (health == marineObj.getHealth()) && (weaponType == marineObj.getWeaponType()) && (meleeWeapon == marineObj.getMeleeWeapon()) &&
+                    (health == marineObj.getHealth()) && (category == marineObj.getCategory()) &&
+                    (weaponType == marineObj.getWeaponType()) && (meleeWeapon == marineObj.getMeleeWeapon()) &&
                     chapter.equals(marineObj.getChapter());
         }
         return false;
     }
 }
-

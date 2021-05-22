@@ -3,8 +3,10 @@
  */
 public enum MeleeWeapon {
     CHAIN_AXE,
-    MANREAPER,
-    LIGHTING_CLAW;
+    CHAIN_SWORD,
+    LIGHTING_CLAW,
+    POWER_BLADE,
+    POWER_FIST;
 
     /**
      * Generates a beautiful list of enum string values.

@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Asks a user a marine's value.
  */
 public class MarineAsker {
-    private final int MAX_Y = 733;
+    private final int MAX_Y = 262;
     private final int MIN_HEALTH = 0;
     private final long MIN_MARINES = 1;
     private final long MAX_MARINES = 1000;
@@ -194,7 +194,7 @@ public class MarineAsker {
      * @return Marine's category.
      * @throws IncorrectInputInScriptException If script is running and something goes wrong.
      */
-    public AstartesCategory askAchievements() throws IncorrectInputInScriptException {
+    public AstartesCategory askCategory() throws IncorrectInputInScriptException {
         String strCategory;
         AstartesCategory category;
         while (true) {

@@ -29,7 +29,7 @@ public class AddIfMinCommand extends AbstractCommand {
                 marineAsker.askCoordinates(),
                 LocalDateTime.now(),
                 marineAsker.askHealth(),
-                //marineAsker.askCategory(),
+                marineAsker.askCategory(),
                 marineAsker.askWeaponType(),
                 marineAsker.askMeleeWeapon(),
                 marineAsker.askChapter()
