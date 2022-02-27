@@ -31,7 +31,7 @@ public class Console {
         int commandStatus;
         try {
             do {
-                Console.print(App.PS1);
+                Console.print(app.PS1);
                 userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2);
                 userCommand[1] = userCommand[1].trim();
                 commandManager.addToHistory(userCommand[0]);
@@ -65,7 +65,7 @@ public class Console {
                     userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
                     userCommand[1] = userCommand[1].trim();
                 }
-                Console.println(App.PS1 + String.join(" ", userCommand));
+                Console.println(app.PS1 + String.join(" ", userCommand));
                 if (userCommand[0].equals("execute_script")) {
                     for (String script : scriptStack) {
                         if (userCommand[1].equals(script)) throw new ScriptRecursionException();
@@ -140,9 +140,6 @@ public class Console {
                 break;
             case "sum_of_health":
                 if (!commandManager.sumOfHealth(userCommand[1])) return 1;
-                break;
-            case "max_by_melee_weapon":
-                if (!commandManager.maxByMeleeWeapon(userCommand[1])) return 1;
                 break;
             case "filter_by_weapon_type":
                 if (!commandManager.filterByWeaponType(userCommand[1])) return 1;

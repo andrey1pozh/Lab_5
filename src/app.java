@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class App {
+public class app {
     public static final String PS1 = "$ ";
     public static final String PS2 = "> ";
 
@@ -26,7 +26,6 @@ public class App {
                 new RemoveGreaterCommand(collectionManager, marineAsker),
                 new HistoryCommand(),
                 new SumOfHealthCommand(collectionManager),
-                new MaxByMeleeWeaponCommand(collectionManager),
                 new FilterByWeaponTypeCommand(collectionManager)
             );
             Console console = new Console(commandManager, userScanner, marineAsker);

@@ -59,7 +59,7 @@ public class MarineAsker {
         while (true) {
             try {
                 Console.println("Введите имя:");
-                Console.print(App.PS2);
+                Console.print(app.PS2);
                 name = userScanner.nextLine().trim();
                 if (fileMode) Console.println(name);
                 if (name.equals("")) throw new MustBeNotEmptyException();
@@ -89,7 +89,7 @@ public class MarineAsker {
         while (true) {
             try {
                 Console.println("Введите координату X:");
-                Console.print(App.PS2);
+                Console.print(app.PS2);
                 strX = userScanner.nextLine().trim();
                 if (fileMode) Console.println(strX);
                 x = Double.parseDouble(strX);
@@ -119,7 +119,7 @@ public class MarineAsker {
         while (true) {
             try {
                 Console.println("Введите координату Y < " + (MAX_Y+1) + ":");
-                Console.print(App.PS2);
+                Console.print(app.PS2);
                 strY = userScanner.nextLine().trim();
                 if (fileMode) Console.println(strY);
                 y = Float.parseFloat(strY);
@@ -166,7 +166,7 @@ public class MarineAsker {
         while (true) {
             try {
                 Console.println("Введите здоровье:");
-                Console.print(App.PS2);
+                Console.print(app.PS2);
                 strHealth = userScanner.nextLine().trim();
                 if (fileMode) Console.println(strHealth);
                 health = Integer.parseInt(strHealth);
@@ -201,7 +201,7 @@ public class MarineAsker {
             try {
                 Console.println("Список категорий - " + AstartesCategory.nameList());
                 Console.println("Введите категорию:");
-                Console.print(App.PS2);
+                Console.print(app.PS2);
                 strCategory = userScanner.nextLine().trim();
                 if (fileMode) Console.println(strCategory);
                 category = AstartesCategory.valueOf(strCategory.toUpperCase());
@@ -232,7 +232,7 @@ public class MarineAsker {
             try {
                 Console.println("Список оружия дальнего боя - " + Weapon.nameList());
                 Console.println("Введите оружие дальнего боя:");
-                Console.print(App.PS2);
+                Console.print(app.PS2);
                 strWeaponType = userScanner.nextLine().trim();
                 if (fileMode) Console.println(strWeaponType);
                 weaponType = Weapon.valueOf(strWeaponType.toUpperCase());
@@ -263,7 +263,7 @@ public class MarineAsker {
             try {
                 Console.println("Список оружия ближнего боя - " + MeleeWeapon.nameList());
                 Console.println("Введите оружие ближнего боя:");
-                Console.print(App.PS2);
+                Console.print(app.PS2);
                 strMeleeWeapon = userScanner.nextLine().trim();
                 if (fileMode) Console.println(strMeleeWeapon);
                 meleeWeapon = MeleeWeapon.valueOf(strMeleeWeapon.toUpperCase());
@@ -292,7 +292,7 @@ public class MarineAsker {
         while (true) {
             try {
                 Console.println("Введите имя ордена:");
-                Console.print(App.PS2);
+                Console.print(app.PS2);
                 chapterName = userScanner.nextLine().trim();
                 if (fileMode) Console.println(chapterName);
                 if (chapterName.equals("")) throw new MustBeNotEmptyException();
@@ -322,7 +322,7 @@ public class MarineAsker {
         while (true) {
             try {
                 Console.println("Введите количество солдат в ордене < " + (MAX_MARINES+1) + ":");
-                Console.print(App.PS2);
+                Console.print(app.PS2);
                 strMarinesCount = userScanner.nextLine().trim();
                 if (fileMode) Console.println(strMarinesCount);
                 marinesCount = Long.parseLong(strMarinesCount);
@@ -370,7 +370,7 @@ public class MarineAsker {
         while (true) {
             try {
                 Console.println(finalQuestion);
-                Console.print(App.PS2);
+                Console.print(app.PS2);
                 answer = userScanner.nextLine().trim();
                 if (fileMode) Console.println(answer);
                 if (!answer.equals("+") && !answer.equals("-")) throw new NotInDeclaredLimitsException();

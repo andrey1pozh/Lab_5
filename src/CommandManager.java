@@ -25,13 +25,12 @@ public class CommandManager {
     private Command removeGreaterCommand;
     private Command historyCommand;
     private Command sumOfHealthCommand;
-    private Command maxByMeleeWeaponCommand;
     private Command filterByWeaponTypeCommand;
 
     public CommandManager(Command helpCommand, Command infoCommand, Command showCommand, Command addCommand, Command updateCommand,
                           Command removeByIdCommand, Command clearCommand, Command saveCommand, Command exitCommand, Command executeScriptCommand,
                           Command addIfMinCommand, Command removeGreaterCommand, Command historyCommand, Command sumOfHealthCommand,
-                          Command maxByMeleeWeaponCommand, Command filterByWeaponTypeCommand) {
+                          Command filterByWeaponTypeCommand) {
         this.helpCommand = helpCommand;
         this.infoCommand = infoCommand;
         this.showCommand = showCommand;
@@ -46,7 +45,6 @@ public class CommandManager {
         this.removeGreaterCommand = removeGreaterCommand;
         this.historyCommand = historyCommand;
         this.sumOfHealthCommand = sumOfHealthCommand;
-        this.maxByMeleeWeaponCommand = maxByMeleeWeaponCommand;
         this.filterByWeaponTypeCommand = filterByWeaponTypeCommand;
 
         // commands.add(helpCommand);
@@ -63,7 +61,6 @@ public class CommandManager {
         commands.add(removeGreaterCommand);
         commands.add(historyCommand);
         commands.add(sumOfHealthCommand);
-        commands.add(maxByMeleeWeaponCommand);
         commands.add(filterByWeaponTypeCommand);
     }
 
@@ -249,15 +246,6 @@ public class CommandManager {
      */
     public boolean sumOfHealth(String argument) {
         return sumOfHealthCommand.execute(argument);
-    }
-
-    /**
-     * Executes needed command.
-     * @param argument Its argument.
-     * @return Command exit status.
-     */
-    public boolean maxByMeleeWeapon(String argument) {
-        return maxByMeleeWeaponCommand.execute(argument);
     }
 
     /**
