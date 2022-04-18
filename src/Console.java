@@ -1,5 +1,3 @@
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -69,7 +67,7 @@ public class Console {
                 if (userCommand[0].equals("execute_script")) {
                     for (String script : scriptStack) {
                         if (userCommand[1].equals(script)) throw new ScriptRecursionException();
-                    }   
+                    }
                 }
                 commandStatus = launchCommand(userCommand);
             } while (commandStatus == 0 && scriptScanner.hasNextLine());
